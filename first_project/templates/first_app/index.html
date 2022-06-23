@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>First App</title>
+    <title>Python Logo Page</title>
 </head>
 <body>
-    <h1>Hello this is index.html!</h1>
-    {{ insert_me }}
+    <h1>Hi this is logo of Python</h1>
+    <img src="{% static "images/pythonlogo.jpg" %}" alt="Uh oH,didn't show!">
+
 </body>
 </html>

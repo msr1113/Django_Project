@@ -3,12 +3,34 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Python Logo Page</title>
-    <link rel="stylesheet" href="{% static "css/mystyle.css" %}"/>
+    <title>Django Level Two</title>
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}"/>
+
 </head>
 <body>
-    <h1>Hi this is logo of Python</h1>
-    <img src="{% static "images/pythonlogo.jpg" %}" alt="Uh oH,didn't show!">
+    <h1>Hi Welcome to Django Level two!</h1>
+    <h2>Here are your access records:</h2>
+
+    <div class="djangotwo">
+       {% if access_records %}
+        <table>
+            <thead>
+                <th>Site Name</th>
+                <th>Date Accessed</th>
+            </thead>
+
+            {% for acc in access_records %}
+            <tr>
+                <td>{{ acc.name }}</td>
+                <td>{{ acc.date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>NO Access record found!</p>
+        {% endif %}
+
+    </div>
 
 </body>
 </html>
